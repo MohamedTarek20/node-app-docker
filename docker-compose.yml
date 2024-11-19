@@ -1,0 +1,8 @@
+services:
+  node-app:
+    container_name: node-app-container
+    build: .
+    volumes:
+      - ./:/app:ro
+    ports:
+      - 4000:4000
