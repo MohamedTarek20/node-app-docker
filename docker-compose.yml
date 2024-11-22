@@ -3,7 +3,9 @@ services:
     container_name: node-app-container
     build: .
     ports:
-      - 4000:4000      
+      - 4000:4000
+    depends_on:
+      - mongo 
   mongo:
     image: mongo
     restart: always
@@ -22,7 +24,10 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
       ME_CONFIG_BASICAUTH: false
-      
+    depends_on:
+      - mongo
+  redis:
+    image: redis
 
 volumes:
     mongo-db:
