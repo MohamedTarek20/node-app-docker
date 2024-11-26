@@ -35,4 +35,4 @@ app.get('/data', async(req, res) => {
     const data = await redisClient.get('products');
     res.send(`<h1>Hello World hi Dev Two</h1><h2>${data}</h2>`)
 });
-app.listen(PORT, () => console.log(`App runnning on port ${PORT}`))
+app.listen(PORT,() => console.log(`App runnning on port ${PORT}`))
