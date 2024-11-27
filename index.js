@@ -44,7 +44,7 @@ client.connect().then(() => console.log('Postgres Database connected')).catch(er
 
 app.get('/', (req, res) => {
     redisClient.set('products', 'hello world');
-    res.send('<h1>Hello World hi Dev Two</h1>')
+    res.send('<h1>Hello World hi Dev Two from AWS using docker hub</h1>')
 });
 
 app.get('/data', async (req, res) => {
