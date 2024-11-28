@@ -3,6 +3,7 @@ const { connect } = require('mongoose');
 // const mongoose = require('mongoose');
 const { Client } = require('pg');
 const redis = require('redis');
+const os =require('os');
 
 const PORT = 4000;
 const app = express();
@@ -44,7 +45,8 @@ client.connect().then(() => console.log('Postgres Database connected')).catch(er
 
 app.get('/', (req, res) => {
     redisClient.set('products', 'hello world');
-    res.send('<h1>Hello World hi Dev Two from AWS using docker hub</h1>')
+    console.log(`come from ${os.hostname()}`);
+    res.send('<h1>Hello World hi Dev Two from AWS using docker hub with watch tower</h1>')
 });
 
 app.get('/data', async (req, res) => {

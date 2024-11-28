@@ -1,10 +1,11 @@
 services:
   node-app:
-    container_name: node-app-container
+    # container_name: node-app-container
     image: mohamedtarekismail95/node-app-docker
     build: .
-    ports:
-      - 4000:4000
+    # no need beacuse nginx is redrecting to node-app:4000
+    # ports:
+    #   - 4000:4000
     depends_on:
       - postgres
       - redis
